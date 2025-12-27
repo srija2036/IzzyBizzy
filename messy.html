@@ -2,6 +2,17 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-auth-compat.js"></script>
+    <script src="firebase-config.js"></script>
+    <script>
+    // If someone tries to access this page directly without logging in, kick them out
+    firebase.auth().onAuthStateChanged((user) => {
+        if (!user) {
+            window.location.href = "login.html";
+        }
+    });
+     </script>
 </head>
 <body style="--c1: #8E2DE2; --c2: #4A00E0; --c3: #f80759; --c4: #bc4e9c;">
     <div class="container tilt-me">

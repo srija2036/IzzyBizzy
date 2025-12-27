@@ -8,7 +8,7 @@
 </head>
 <body style="--c1: #ffafbd; --c2: #ffc3a0; --c3: #2193b0; --c4: #6dd5ed;">
     
-    <div style="position: absolute; top: 20px; right: 20px; text-align: right;">
+    <div style="position: absolute; top: 20px; right: 20px; text-align: right; z-index: 1000;">
         <span id="user-name-display" style="color: white; margin-right: 15px; font-weight: 600;"></span>
         <button id="login-status-btn" class="emotion-btn" onclick="handleAuth()" style="padding: 8px 20px; font-size: 0.9rem;">login</button>
     </div>
@@ -18,11 +18,11 @@
         <p class="tagline">i don’t know what i feel but i feel it deeply.</p>
         
         <div class="mood-grid">
-            <a href="overwhelmed.html" class="emotion-btn" onclick="logMood('burnt out')">burnt out</a>
-            <a href="soft.html" class="emotion-btn" onclick="logMood('rotting')">rotting</a>
-            <a href="healing.html" class="emotion-btn" onclick="logMood('healing')">healing</a>
-            <a href="messy.html" class="emotion-btn" onclick="logMood('main character')">main character</a>
-            <a href="quiet.html" class="emotion-btn" onclick="logMood('brain fog')">brain fog</a>
+            <div class="emotion-btn" style="cursor: pointer;" onclick="protectedRedirect('overwhelmed.html', 'burnt out')">burnt out</div>
+            <div class="emotion-btn" style="cursor: pointer;" onclick="protectedRedirect('soft.html', 'rotting')">rotting</div>
+            <div class="emotion-btn" style="cursor: pointer;" onclick="protectedRedirect('healing.html', 'healing')">healing</div>
+            <div class="emotion-btn" style="cursor: pointer;" onclick="protectedRedirect('messy.html', 'main character')">main character</div>
+            <div class="emotion-btn" style="cursor: pointer;" onclick="protectedRedirect('quiet.html', 'brain fog')">brain fog</div>
         </div>
     </div>
 
