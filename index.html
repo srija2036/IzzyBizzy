@@ -7,25 +7,31 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body style="--c1: #ffafbd; --c2: #ffc3a0; --c3: #2193b0; --c4: #6dd5ed;">
+    
+    <div style="position: absolute; top: 20px; right: 20px; text-align: right;">
+        <span id="user-name-display" style="color: white; margin-right: 15px; font-weight: 600;"></span>
+        <button id="login-status-btn" class="emotion-btn" onclick="handleAuth()" style="padding: 8px 20px; font-size: 0.9rem;">login</button>
+    </div>
+
     <div class="container tilt-me">
         <h1 class="title">Izzy Bizzy</h1>
         <p class="tagline">i don’t know what i feel but i feel it deeply.</p>
+        
         <div class="mood-grid">
-            <a href="overwhelmed.html" class="emotion-btn">burnt out</a>
-            <a href="soft.html" class="emotion-btn">rotting</a>
-            <a href="healing.html" class="emotion-btn">healing</a>
-            <a href="messy.html" class="emotion-btn">main character</a>
-            <a href="quiet.html" class="emotion-btn">brain fog</a>
+            <a href="overwhelmed.html" class="emotion-btn" onclick="logMood('burnt out')">burnt out</a>
+            <a href="soft.html" class="emotion-btn" onclick="logMood('rotting')">rotting</a>
+            <a href="healing.html" class="emotion-btn" onclick="logMood('healing')">healing</a>
+            <a href="messy.html" class="emotion-btn" onclick="logMood('main character')">main character</a>
+            <a href="quiet.html" class="emotion-btn" onclick="logMood('brain fog')">brain fog</a>
         </div>
     </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-auth-compat.js"></script>
+    
+    <script src="firebase-config.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
     <script src="script.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
-
-    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore-compat.js"></script>
-
-    <script src="firebase-config.js"></script>
-
-     <script src="script.js"></script>
 </body>
 </html>

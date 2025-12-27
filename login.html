@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join the Sanctuary | Izzy Bizzy</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        input {
+            width: 80%;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.3);
+            background: rgba(255,255,255,0.2);
+            color: white;
+            outline: none;
+            font-family: 'Outfit', sans-serif;
+        }
+        input::placeholder { color: rgba(255,255,255,0.7); }
+        .auth-box { margin-top: 20px; }
+    </style>
+</head>
+<body style="--c1: #a1c4fd; --c2: #c2e9fb; --c3: #d4fc79; --c4: #96e6a1;">
+    
+    <div class="container">
+        <h1 class="title" style="font-size: 3rem;">welcome.</h1>
+        <p class="tagline">create an account to track your moods.</p>
+
+        <div class="auth-box">
+            <input type="email" id="email" placeholder="email address"><br>
+            <input type="password" id="password" placeholder="password"><br>
+            
+            <div style="margin-top: 20px;">
+                <button class="emotion-btn" onclick="signIn()">login</button>
+                <button class="emotion-btn" onclick="signUp()" style="background: transparent; border: 1px solid white;">sign up</button>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-home">← back to landing</a>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-auth-compat.js"></script>
+    <script src="firebase-config.js"></script>
+
+    <script>
+        const userEmail = document.getElementById('email');
+        const userPass = document.getElementById('password');
+
+        function signUp() {
+            firebase.auth().createUserWithEmailAndPassword(userEmail.value, userPass.value)
+                .then(() => { alert("Account created! Redirecting..."); window.location.href="index.html"; })
+                .catch(err => alert(err.message));
+        }
+
+        function signIn() {
+            firebase.auth().signInWithEmailAndPassword(userEmail.value, userPass.value)
+                .then(() => { window.location.href="index.html"; })
+                .catch(err => alert(err.message));
+        }
+    </script>
+</body>
+</html>
